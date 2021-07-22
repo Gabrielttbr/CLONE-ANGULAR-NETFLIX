@@ -11,13 +11,15 @@
                     <!--Title-->
                     <h3>Register</h3>
                     <!--Email-->
-                    <label for="email">Email</label>
-                    <input type="email" id="Email" value="Email"><br>
-                    <!--Password-->
-                    <label >Password</label>
-                    <input type="password" id="Password" value="Password"><br>
-                    <label>Confirm password</label>
-                    <input type="password" id="Password" value="Password"><br>
+                    <form action="/" method="POST">
+                        <label for="email">Email</label>
+                        <input type="email" id="Email" name="email" value="Email"><br>
+                        <!--Password-->
+                        <label >Password</label>
+                        <input type="password" id="Password"  value="Password"><br>
+                        <label>Confirm password</label>
+                        <input type="password" id="Password" name="senha" value="Password"><br>
+                    </form>
                     <!--Button-->
                     <button type="button" class="btn-danger">Register</button>
                 </div>
