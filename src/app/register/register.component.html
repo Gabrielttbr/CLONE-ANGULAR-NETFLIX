@@ -13,12 +13,15 @@
                     <!--Email-->
                     <form action="/" method="POST">
                         <label for="email">Email</label>
-                        <input type="email" id="email" (keyup)="emailKey($event)" #EmailRegister><br>
+                        <input type="email" id="email" (keyup)="emailKey($event)">
+                        <div class="alert-danger" role="alert" >
+                                {{ EmailErro }}
+                        </div>
                         <!--Password-->
                         <label >Password</label>
-                        <input type="password" id="senhar" #SenhaRegister><br>
+                        <input type="password" id="senhar" #SenhaRegister (keyup)="senhaKey($event)"  ><br>
                         <label>Confirm password</label>
-                        <input type="password" id="senha"(keyup)="senhaKey($event)" #SenhaConfirmRegister ><br>
+                        <input type="password" id="senha"#SenhaConfirmRegister (keyup)="ConfirmeSenha($event)"><br>
                     </form>
                     <!--Button-->
                     <button type="button" class="btn-danger"(click)="login()">Register</button>

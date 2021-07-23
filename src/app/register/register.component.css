@@ -50,7 +50,7 @@ section .container .login input{
     border: none;
     color: #fff;
     padding: 20px;
-    margin-bottom: 26px;
+    margin-top: 10px;
 }
 section .container .login button{
     padding: 10px;
