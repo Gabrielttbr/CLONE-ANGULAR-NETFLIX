@@ -11,11 +11,8 @@ app.use(express.json())
 //Rotas
 app.post('/register',async function(req, res){
     const result = await Post.create({
-
         email: req.body.email,
         senha: req.body.senha
-
-    
     })
     res.send(result)
 })
