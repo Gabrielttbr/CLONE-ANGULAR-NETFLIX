@@ -20,11 +20,18 @@
                         <!--Password-->
                         <label >Password</label>
                         <input type="password" id="senhar" #SenhaRegister (keyup)="senhaKey($event)"  ><br>
+                        <div class="alert-danger" role="alert" >
+                            {{ SenhaErro }}
+                        </div>
                         <label>Confirm password</label>
-                        <input type="password" id="senha"#SenhaConfirmRegister (keyup)="ConfirmeSenha($event)"><br>
+                        <input type="password" id="senha"#SenhaConfirmRegister (keyup)="ConfirmeSenha($event)" ><br>
+                        <div class="alert-danger" role="alert" >
+                            {{ ConfirmSenhaErro }}
+                        </div>
+                        
                     </form>
                     <!--Button-->
-                    <button type="button" class="btn-danger"(click)="login()">Register</button>
+                    <button type="button" class="btn-danger"(click)="login()" >Register</button>
                 </div>
                 <div class="register">
                     <!--Remeber me-->

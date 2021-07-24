@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 interface cadastroprop{
   email: string;
@@ -10,7 +11,7 @@ interface cadastroprop{
   providedIn: 'root'
 })
 export class AppService {
-
+  formulario!: FormBuilder;
   constructor(private http: HttpClient) {
     
 
@@ -24,8 +25,10 @@ export class AppService {
         'Access-Control-Allow-Headers':'Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
       })
     };
+        this.formulario = new FormBuilder;
         this.http.post('http://localhost:3000/register', { email, senha }, httpOptions).subscribe((value)=>{
           console.log(value)
+        
         })
     }
 }
