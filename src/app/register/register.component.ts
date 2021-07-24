@@ -1,5 +1,4 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Component,  OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 
 @Component({
@@ -8,7 +7,6 @@ import { AppService } from '../app.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
   email: string = "";
   senha: string = "";
   ConfirmSenha: string = "";
@@ -17,22 +15,10 @@ export class RegisterComponent implements OnInit {
   EmailErro: string = "";
   SenhaErro: string = "";
   ConfirmSenhaErro: string = "";
-
-  //intancias
-  formulario!: FormBuilder;
-  myform!: FormGroup;
-  constructor(private appService: AppService) { 
-
-    this.formulario.group({
-      email: [null],
-      senha: [null],
-      confirmSenha: [null] 
-    })
-  }
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
   }
-
   emailKey(value: any) {
     //Pegando  o valor do formulário
     this.email = value.target.value;
@@ -74,9 +60,9 @@ export class RegisterComponent implements OnInit {
       }
       //Vendo se ele digitou uma senha forte
       if (this.ConfirmSenha.length < 6){
-        this.ConfirmSenhaErro = "[Error] enter your password";
-      }else {
         this.ConfirmSenhaErro = "[Error] the password is too weak";
+      }else {
+        this.ConfirmSenhaErro = "";
       }
       //Vendo se a primeira senha e igual a segunda senha 
       if (this.ConfirmSenha !== this.senha){
@@ -84,6 +70,7 @@ export class RegisterComponent implements OnInit {
       }else{
         this.ConfirmSenhaErro = "";
       }
+      
       //Registrando o email e a senha após a validação
       if (this.EmailErro.length == 0 && this.SenhaErro.length == 0 && this.ConfirmSenhaErro.length == 0 ){
         //Fazendo o cadastro na minha api
@@ -92,9 +79,7 @@ export class RegisterComponent implements OnInit {
         console.log(this.email)
         console.log(this.senha)  
   
-  
+        
       }
-
-    }
   }
-  
+}
