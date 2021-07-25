@@ -11,26 +11,26 @@
                     <!--Title-->
                     <h3>Register</h3>
                     <!--Email-->
-                    <form action="/" method="POST">
+                    <form action="/" method="POST" >
                         <label for="email">Email</label>
-                        <input type="email" id="email" (keyup)="emailKey($event)">
+                        <input type="email"  (keyup)="emailKey($event)" >
                         <div class="alert-danger" role="alert" >
                                 {{ EmailErro }}
                         </div>
                         <!--Password-->
                         <label >Password</label>
-                        <input type="password" id="senhar" #SenhaRegister (keyup)="senhaKey($event)"  >
+                        <input type="password"  #SenhaRegister (keyup)="senhaKey($event)" >
                         <div class="alert-danger" role="alert" >
                             {{ SenhaErro }}
                         </div>
                         <label>Confirm password</label>
-                        <input type="password" id="senha"#SenhaConfirmRegister (keyup)="ConfirmeSenha($event)">
+                        <input type="password"#SenhaConfirmRegister (keyup)="ConfirmeSenha($event)"  >
                         <div class="alert-danger" role="alert" >
                             {{ ConfirmSenhaErro }}
                         </div>
                     </form>
                     <!--Button-->
-                    <button type="button" class="btn-danger"(click)="login()">Register</button>
+                    <button type="submit" class="btn-danger"(click)="login()">Register</button>
                 </div>
                 <div class="register">
                     <!--Remeber me-->

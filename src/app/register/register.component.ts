@@ -1,3 +1,4 @@
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 
@@ -15,6 +16,9 @@ export class RegisterComponent implements OnInit {
   EmailErro: string = "";
   SenhaErro: string = "";
   ConfirmSenhaErro: string = "";
+
+  //Instancias de class
+
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
@@ -75,11 +79,11 @@ export class RegisterComponent implements OnInit {
       if (this.EmailErro.length == 0 && this.SenhaErro.length == 0 && this.ConfirmSenhaErro.length == 0 ){
         //Fazendo o cadastro na minha api
         const { email, senha } = this
-        this.appService.cadastro({ email, senha })
+        this.appService.cadastro({ email, senha })  
         console.log(this.email)
-        console.log(this.senha)  
-  
-        
+
       }
-  }
+      
+    }
+
 }
