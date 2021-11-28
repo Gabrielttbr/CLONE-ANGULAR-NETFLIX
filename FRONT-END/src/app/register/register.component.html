@@ -1,0 +1,81 @@
+<section id="login">
+    <div class="banner">
+        <!--Logotipo-->
+        <nav>
+            <a href="#"><img src="../../assets/logotipo.png" alt="Netflix" height="50px"></a>
+        </nav>
+        <!--Login-->
+        <main>
+            <div class="container">
+                <div class="login">
+                    <!--Title-->
+                    <h3>Register</h3>
+                    <!--Email-->
+                    <form action="/" method="POST" >
+                        <label for="email">Email</label>
+                        <input type="email"  (keyup)="emailKey($event)" >
+                        <div class="alert-danger" role="alert" >
+                                {{ EmailErro }}
+                        </div>
+                        <!--Password-->
+                        <label >Password</label>
+                        <input type="password"  #SenhaRegister (keyup)="senhaKey($event)" >
+                        <div class="alert-danger" role="alert" >
+                            {{ SenhaErro }}
+                        </div>
+                        <label>Confirm password</label>
+                        <input type="password"#SenhaConfirmRegister (keyup)="ConfirmeSenha($event)"  >
+                        <div class="alert-danger" role="alert" >
+                            {{ ConfirmSenhaErro }}
+                        </div>
+                    </form>
+                    <!--Button-->
+                    <button type="submit" class="btn-danger"(click)="login()">Register</button>
+                </div>
+                <div class="register">
+                    <!--Remeber me-->
+                    
+                    <h5> <a routerLink="" routerLinkActive="active">Sign In!</a></h5>
+                    <p>This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more.</a></p>
+                    
+                </div>
+            </div>
+            <hr>
+        </main>
+        <!--Footer-->
+        <footer>
+            <div class="questions">
+                <!--Links-->
+                <ul>
+                
+                    <li><a href="#">FAQ</a></li>
+                    <LI><a href="#">Investor Relations</a></LI>
+                    <li><a href="#">Ways to Watch</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                    <li><a href="#">Only on Netflix</a></li>
+                </ul>
+                <ul>
+                    <li> <a href="#">Help Center</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Redeem Gift</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Speed Test</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Buy gift cards</a></li>
+                    <li><a href="#">Cookie preferences</a></li>
+                    <li><a href="#">Legal Notice</a>s</li>
+                </ul>
+                <p><strong>Netflix Brazil</strong></p>
+            </div>
+        </footer>
+    </div>
+
+</section>
+
